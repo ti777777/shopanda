@@ -1,6 +1,6 @@
-backstage/AP/.vs/*
+backstage/Web/.vs/*
 
-backstage/AP/AP/bin/*
+backstage/Web/Web/bin/*
 
-backstage/AP/AP/obj/*
+backstage/Web/Web/obj/*
 
