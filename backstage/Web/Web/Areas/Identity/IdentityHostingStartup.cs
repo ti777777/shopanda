@@ -27,8 +27,27 @@ namespace Web.Areas.Identity
                     .EnableSensitiveDataLogging()
                     .EnableDetailedErrors());
 
-                services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<AuthDbContext>();
+                services.AddAuthentication(o =>
+                {
+                    o.DefaultScheme = IdentityConstants.ApplicationScheme;
+                    o.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+                })
+                .AddIdentityCookies(o => { });
+
+                var identityServices = services.AddIdentityCore<ApplicationUser>(o =>
+                {
+                    o.Stores.MaxLengthForKeys = 128;
+                    o.SignIn.RequireConfirmedAccount = true;
+                }).AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<AuthDbContext>()
+                .AddUserManager<MyUserManager>()
+                .AddSignInManager();
+                
+
+                
+
+                //services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                //    .AddEntityFrameworkStores<AuthDbContext>();
             });
         }
     }
