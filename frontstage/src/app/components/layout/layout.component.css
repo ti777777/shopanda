@@ -1,0 +1,60 @@
+
+#main{
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 1340px;
+}
+
+#header{
+  width: 100%;
+  background-color: lightblue;
+}
+
+@media (max-width:1339px) {
+  #main{
+    width:1230px;
+  }
+
+}
+@media (max-width:1279px) {
+  #main{
+    width:1100px;
+  }
+
+}
+@media (max-width:1139px){
+  #main{
+    width:1000px;
+  }
+
+}
+@media (max-width:1023px){
+  #main{
+    width:860px;
+  }
+
+}
+@media (max-width:880px){
+
+  #main{
+    width: 740px;
+  }
+
+}
+@media (max-width: 768px){
+
+  #main{
+    width:calc(100% - 20px);
+  }
+
+}
+@media (max-width: 600px){
+  #main{
+    width: 100vw;
+  }
+}
+@media (max-width:480px){
+  #main{
+    width: 100vw;
+  }
+}
