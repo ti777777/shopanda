@@ -21,13 +21,18 @@ namespace Web.Controllers
             _logger = logger;
         }
 
-        //[Authorize(AuthenticationSchemes = "Identity.Application")]
         public IActionResult Index()
         {
             return View();
         }
+        
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult HelloWorld()
         {
             return View();
         }
