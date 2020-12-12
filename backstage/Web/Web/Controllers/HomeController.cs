@@ -28,7 +28,7 @@ namespace Web.Controllers
         
 
         public string Hello(){
-            return "helloworld";
+            return "welcome";
         }
 
         public IActionResult Privacy()
