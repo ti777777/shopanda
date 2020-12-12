@@ -1,26 +1,104 @@
 
 #main{
   border: 1px solid black;
-  margin: 0 auto;
+  margin: 3px auto 0 auto;
   width: 1340px;
 }
 
 #header{
   width: 100%;
-  background-color: lightblue;
+  height: 40px;
+  background-color: #333;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header a:hover{
+  text-decoration: none;
+}
+
+.title{
+  position: absolute;
+  left: 12%
+}
+
+.login{
+  font-size: 14px;
+  position: absolute;
+  right: 12%;
+}
+
+#nav{
+  width: 100vw;
+  height: 90px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.content{
+  position: absolute;
+  left: 12%;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 12%;
+}
+
+#footer{
+  width: 100vw;
+  height: 280px;
+  background-color: #32333b;
+  color:#a8aaba;
+  line-height: 1.8;
+  font-size: 14px;
+  border: 1px solid black;
+  position: fixed;
+  bottom: 0;
+}
+
+.contact{
+  display: inline-block;
+}
+
+.footer_contact{
+  padding: 25px 250px;
+}
+
+.footer li{
+  color:#ffffff;
+}
+
+ul{
+  display: inline-block;
+  font-size: 20px;
+  vertical-align:top;
+  margin-left: 40px;
+}
+
+.footer_contact label{
+  font-size: 14px;
+  color: #a8aaba;
+}
+
+.footer_contact label:hover{
+  color: #1baeae;
 }
 
 @media (max-width:1339px) {
   #main{
     width:1230px;
   }
-
 }
 @media (max-width:1279px) {
   #main{
     width:1100px;
   }
-
 }
 @media (max-width:1139px){
   #main{
@@ -32,7 +110,25 @@
   #main{
     width:860px;
   }
-
+  .content{
+    position: absolute;
+    left: 2%;
+  }
+  .search{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 3%;
+  }
+  .title{
+    position: absolute;
+    left: 2%
+  }
+  .login{
+    font-size: 14px;
+    position: absolute;
+    right: 2%;
+  }
 }
 @media (max-width:880px){
 
@@ -52,9 +148,22 @@
   #main{
     width: 100vw;
   }
+  .content{
+    position: absolute;
+    left: 0;
+  }
+  .search{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+  }
 }
 @media (max-width:480px){
   #main{
     width: 100vw;
+  }
+  .company{
+    display: none;
   }
 }

@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  public searchKeyword: string;
+  constructor() {
+    this.searchKeyword = '';
+  }
 
   ngOnInit(): void {
   }
