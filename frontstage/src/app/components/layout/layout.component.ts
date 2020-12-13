@@ -9,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
 
   public searchKeyword: string;
+  public shoppingTotal: number;
   constructor() {
     this.searchKeyword = '';
+    this.shoppingTotal = 0;
   }
 
   ngOnInit(): void {
