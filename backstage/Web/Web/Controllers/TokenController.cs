@@ -21,23 +21,12 @@ namespace Web.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("~/signin")]
-        public ActionResult<string> SignIn(LoginViewModel login)
+        [HttpGet("~/signin")]
+        public ActionResult<string> SignIn(string username)
         {
-            if (ValidateUser(login))
-            {
-                return jwt.GenerateToken(login.Username);
-            }
-            else
-            {
-                return BadRequest();
-            }
+            return jwt.GenerateToken(username);
         }
 
-        private bool ValidateUser(LoginViewModel login)
-        {
-            return true; // TODO
-        }
 
         [HttpGet("~/claims")]
         public IActionResult GetClaims()

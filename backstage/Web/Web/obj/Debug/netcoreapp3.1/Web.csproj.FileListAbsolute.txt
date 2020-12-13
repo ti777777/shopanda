@@ -169,12 +169,6 @@ C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Web.pdb
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Web.genruntimeconfig.cache
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Web.csprojAssemblyReference.cache
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Humanizer.dll
@@ -182,3 +176,6 @@ C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Microso
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Web.csproj.CoreCompileInputs.cache
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

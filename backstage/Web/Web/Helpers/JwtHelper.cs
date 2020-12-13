@@ -20,36 +20,28 @@ namespace Web.Helpers
         }
         public string GenerateToken(string userName, int expireMinutes = 30)
         {
-            var issuer = Configuration.GetValue<string>("JwtSettings:Issuer");
-            var signKey = Configuration.GetValue<string>("JwtSettings:SignKey");
-
-            var claims = new List<Claim>();
-
-            claims.Add(new Claim(JwtRegisteredClaimNames.Sub, userName)); 
-            claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())); // JWT ID
-
-            claims.Add(new Claim("roles", "Admin"));
-            claims.Add(new Claim("roles", "Users"));
-
-            var userClaimsIdentity = new ClaimsIdentity(claims);
-
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signKey));
-
-            var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
-            
-            var tokenDescriptor = new SecurityTokenDescriptor
+            var claims = new[]
             {
-                Issuer = issuer,
-                Subject = userClaimsIdentity,
-                Expires = DateTime.Now.AddMinutes(expireMinutes),
-                SigningCredentials = signingCredentials,
+                new Claim(JwtRegisteredClaimNames.Sub, userName)
             };
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-            var serializeToken = tokenHandler.WriteToken(securityToken);
+            var secretBytes = Encoding.UTF8.GetBytes(Constants.Secret);
+            var key = new SymmetricSecurityKey(secretBytes);
+            var algorithm = SecurityAlgorithms.HmacSha256;
 
-            return serializeToken;
+            var signingCredentials = new SigningCredentials(key, algorithm);
+
+            var token = new JwtSecurityToken(
+                Constants.Issuer,
+                Constants.Audiance,
+                claims,
+                notBefore: DateTime.Now,
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials);
+
+            var tokenJson = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return tokenJson;
         }
     }
 }
