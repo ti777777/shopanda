@@ -42,7 +42,7 @@ namespace Web.Controllers
 
                 if (signInResult.Succeeded)
                 {
-                    return RedirectToAction("Index", "HomeController");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 

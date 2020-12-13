@@ -27,12 +27,6 @@ namespace Web.Controllers
         }
         
 
-<<<<<<< Updated upstream
-        public string Hello(){
-            return "helloworld";
-        }
-=======
->>>>>>> Stashed changes
 
         public IActionResult Privacy()
         {
