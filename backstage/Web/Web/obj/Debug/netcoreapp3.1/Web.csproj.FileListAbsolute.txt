@@ -177,3 +177,4 @@ C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\V
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\Web.styles.css
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Assets\js\.eslintrc.json
+C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CenterLayout.cshtml.g.cs
