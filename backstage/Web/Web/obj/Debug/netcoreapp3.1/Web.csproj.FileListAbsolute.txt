@@ -1,8 +1,5 @@
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Web.StaticWebAssets.xml
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Web.exe
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Web.deps.json
@@ -154,7 +151,6 @@ C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\V
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
@@ -179,3 +175,5 @@ C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Web.Mvc
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\Web.styles.css
+C:\Users\Tsai\Desktop\shopanda\backstage\Web\Web\bin\Debug\netcoreapp3.1\Assets\js\.eslintrc.json
