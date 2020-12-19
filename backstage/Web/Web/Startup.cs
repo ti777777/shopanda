@@ -37,7 +37,7 @@ namespace Web
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            string connectionString = "server=127.0.0.1;user=root;password=abc123456789;database=auth";
+            string connectionString = "server=host.docker.internal;user=root;password=1234;database=auth";
 
             services.AddDbContext<shopContext>();
 
