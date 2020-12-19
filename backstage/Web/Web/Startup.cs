@@ -39,6 +39,8 @@ namespace Web
 
             string connectionString = "server=127.0.0.1;user=root;password=abc123456789;database=auth";
 
+            services.AddDbContext<shopContext>();
+
             services.AddDbContext<AuthDbContext>(config =>
                 config.UseMySql(
                         connectionString,
@@ -63,33 +65,33 @@ namespace Web
                 config.LoginPath = "/Account/Login";
             });
 
-            services.AddAuthentication("JWT")
-                    .AddJwtBearer("JWT", configs =>
-                    {
-                        var secretBytes = Encoding.UTF8.GetBytes(Constants.Secret);
-                        var keys = new SymmetricSecurityKey(secretBytes);
+            //services.AddAuthentication("JWT")
+            //        .AddJwtBearer("JWT", configs =>
+            //        {
+            //            var secretBytes = Encoding.UTF8.GetBytes(Constants.Secret);
+            //            var keys = new SymmetricSecurityKey(secretBytes);
 
-                        configs.Events = new JwtBearerEvents()
-                        {
-                            OnMessageReceived = context =>
-                            {
-                                if (context.Request.Query.ContainsKey("access_token"))
-                                {
-                                    context.Token = context.Request.Query["access_token"];
-                                }
+            //            configs.Events = new JwtBearerEvents()
+            //            {
+            //                OnMessageReceived = context =>
+            //                {
+            //                    if (context.Request.Query.ContainsKey("access_token"))
+            //                    {
+            //                        context.Token = context.Request.Query["access_token"];
+            //                    }
 
-                                return Task.CompletedTask;
-                            }
-                    };
+            //                    return Task.CompletedTask;
+            //                }
+            //        };
 
-                    configs.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        ClockSkew = TimeSpan.Zero,
-                        ValidIssuer = Constants.Issuer,
-                        ValidAudience = Constants.Audiance,
-                        IssuerSigningKey = keys,
-                    };
-            });
+            //        configs.TokenValidationParameters = new TokenValidationParameters()
+            //        {
+            //            ClockSkew = TimeSpan.Zero,
+            //            ValidIssuer = Constants.Issuer,
+            //            ValidAudience = Constants.Audiance,
+            //            IssuerSigningKey = keys,
+            //        };
+            //});
 
         }
 
