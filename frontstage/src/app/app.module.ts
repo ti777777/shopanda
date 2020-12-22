@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ElModule } from 'element-angular';
+import { SearchComponent } from './components/search/search.component';
 
 /*引入组件*/
 
@@ -22,7 +23,8 @@ import { ElModule } from 'element-angular';
     ShoppingCartComponent,
     LoginComponent,
     RegisterComponent,
-    LayoutComponent
+    LayoutComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
