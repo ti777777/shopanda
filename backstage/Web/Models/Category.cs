@@ -7,8 +7,8 @@ namespace Web.Models
 {
     public partial class Category
     {
-        public int CId { get; set; }
-        public string CName { get; set; }
-        public string CDescription { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

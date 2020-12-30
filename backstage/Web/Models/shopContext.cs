@@ -19,6 +19,7 @@ namespace Web.Models
 
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Orderitem> Orderitems { get; set; }
         public virtual DbSet<Product> Products { get; set; }
@@ -28,7 +29,7 @@ namespace Web.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=localhost;port=3306;user=root;password=abc123456789;database=shop", Microsoft.EntityFrameworkCore.ServerVersion.FromString("8.0.19-mysql"));
+                optionsBuilder.UseMySql("server=localhost;database=shop;user=root;password=1234;treattinyasboolean=true", Microsoft.EntityFrameworkCore.ServerVersion.FromString("8.0.19-mysql"));
             }
         }
 
@@ -102,119 +103,127 @@ namespace Web.Models
 
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.HasKey(e => e.CId)
-                    .HasName("PRIMARY");
-
                 entity.ToTable("category");
 
-                entity.Property(e => e.CId)
+                entity.Property(e => e.Id)
                     .ValueGeneratedNever()
-                    .HasColumnName("cID");
+                    .HasColumnName("id");
 
-                entity.Property(e => e.CDescription)
+                entity.Property(e => e.Description)
                     .HasColumnType("varchar(45)")
-                    .HasColumnName("cDescription")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.CName)
+                entity.Property(e => e.Name)
                     .HasColumnType("varchar(45)")
-                    .HasColumnName("cName")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+            });
+
+            modelBuilder.Entity<Customer>(entity =>
+            {
+                entity.ToTable("customer");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Customercol)
+                    .HasColumnType("varchar(45)")
+                    .HasColumnName("customercol")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Email)
+                    .HasColumnType("varchar(45)")
+                    .HasColumnName("email")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Name)
+                    .HasColumnType("varchar(45)")
+                    .HasColumnName("name")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Phone)
+                    .HasColumnType("varchar(45)")
+                    .HasColumnName("phone")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Type)
+                    .HasColumnType("varchar(45)")
+                    .HasColumnName("type")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
             });
 
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.HasKey(e => e.OId)
-                    .HasName("PRIMARY");
-
                 entity.ToTable("order");
 
-                entity.Property(e => e.OId).HasColumnName("oID");
+                entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.MId).HasColumnName("mID");
+                entity.Property(e => e.Cid).HasColumnName("cid");
 
-                entity.Property(e => e.OTime)
+                entity.Property(e => e.Time)
                     .HasColumnType("datetime")
-                    .HasColumnName("oTime");
+                    .HasColumnName("time");
             });
 
             modelBuilder.Entity<Orderitem>(entity =>
             {
-                entity.HasKey(e => new { e.OId, e.OiId })
+                entity.HasKey(e => new { e.Id, e.Iid })
                     .HasName("PRIMARY")
                     .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
 
                 entity.ToTable("orderitem");
 
-                entity.HasIndex(e => e.PId, " _idx");
+                entity.HasIndex(e => e.Pid, " _idx");
 
-                entity.Property(e => e.OId).HasColumnName("oID");
+                entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.OiId).HasColumnName("oiID");
+                entity.Property(e => e.Iid).HasColumnName("iid");
 
-                entity.Property(e => e.OiDiscount).HasColumnName("oiDiscount");
+                entity.Property(e => e.Pid).HasColumnName("pid");
 
-                entity.Property(e => e.OiQuantity).HasColumnName("oiQuantity");
-
-                entity.Property(e => e.OiSpecialoption)
+                entity.Property(e => e.Specialoption)
                     .HasColumnType("varchar(45)")
-                    .HasColumnName("oiSpecialoption")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
-
-                entity.Property(e => e.PId).HasColumnName("pID");
             });
 
             modelBuilder.Entity<Product>(entity =>
             {
-                entity.HasKey(e => e.PId)
-                    .HasName("PRIMARY");
-
                 entity.ToTable("product");
 
-                entity.Property(e => e.PId).HasColumnName("pID");
+                entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.PCategory)
+                entity.Property(e => e.Category)
                     .HasColumnType("varchar(45)")
-                    .HasColumnName("pCategory")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.PContractor)
+                entity.Property(e => e.Contractor)
                     .HasColumnType("varchar(45)")
-                    .HasColumnName("pContractor")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.PDescription)
+                entity.Property(e => e.Description)
                     .HasColumnType("mediumtext")
-                    .HasColumnName("pDescription")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.PImage)
-                    .HasColumnType("mediumblob")
-                    .HasColumnName("pImage");
+                entity.Property(e => e.Image).HasColumnType("mediumblob");
 
-                entity.Property(e => e.PName)
+                entity.Property(e => e.Name)
                     .HasColumnType("varchar(45)")
-                    .HasColumnName("pName")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.PPrice).HasColumnName("pPrice");
+                entity.Property(e => e.Saledate).HasColumnType("date");
 
-                entity.Property(e => e.PRemaining).HasColumnName("pRemaining");
-
-                entity.Property(e => e.PSaledate)
-                    .HasColumnType("date")
-                    .HasColumnName("pSaledate");
-
-                entity.Property(e => e.PStatus)
+                entity.Property(e => e.Status)
                     .HasColumnType("varchar(45)")
-                    .HasColumnName("pStatus")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
             });

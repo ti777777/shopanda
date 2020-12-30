@@ -21,10 +21,10 @@ namespace Web.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("~/signin")]
-        public ActionResult<string> SignIn(string username)
+        [HttpPost("~/signin")]
+        public ActionResult<string> SignIn(UserModel user)
         {
-            return jwt.GenerateToken(username);
+            return jwt.GenerateToken(user.Username);
         }
 
 
@@ -48,7 +48,7 @@ namespace Web.Controllers
         }
     }
 
-    public class LoginViewModel
+    public class UserModel
     {
         public string Username { get; set; }
         public string Password { get; set; }

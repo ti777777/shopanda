@@ -7,11 +7,11 @@ namespace Web.Models
 {
     public partial class Orderitem
     {
-        public int OId { get; set; }
-        public int OiId { get; set; }
-        public int? PId { get; set; }
-        public int? OiQuantity { get; set; }
-        public float? OiDiscount { get; set; }
-        public string OiSpecialoption { get; set; }
+        public int Id { get; set; }
+        public int Iid { get; set; }
+        public int? Pid { get; set; }
+        public int? Quantity { get; set; }
+        public float? Discount { get; set; }
+        public string Specialoption { get; set; }
     }
 }

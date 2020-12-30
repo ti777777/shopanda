@@ -7,15 +7,15 @@ namespace Web.Models
 {
     public partial class Product
     {
-        public int PId { get; set; }
-        public string PName { get; set; }
-        public string PDescription { get; set; }
-        public byte[] PImage { get; set; }
-        public int? PPrice { get; set; }
-        public string PCategory { get; set; }
-        public string PContractor { get; set; }
-        public int? PRemaining { get; set; }
-        public string PStatus { get; set; }
-        public DateTime? PSaledate { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public byte[] Image { get; set; }
+        public int? Price { get; set; }
+        public string Category { get; set; }
+        public string Contractor { get; set; }
+        public int? Remaining { get; set; }
+        public string Status { get; set; }
+        public DateTime? Saledate { get; set; }
     }
 }
