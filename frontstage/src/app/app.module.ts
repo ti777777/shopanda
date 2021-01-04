@@ -11,6 +11,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ElModule } from 'element-angular';
 import { SearchComponent } from './components/search/search.component';
+import { OwlcarouselDirective } from './owlcarousel.directive';
 
 /*引入组件*/
 
@@ -24,7 +25,8 @@ import { SearchComponent } from './components/search/search.component';
     LoginComponent,
     RegisterComponent,
     LayoutComponent,
-    SearchComponent
+    SearchComponent,
+    OwlcarouselDirective
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,5 @@
 
 #main{
-  border: 1px solid black;
   margin: 3px auto 0 auto;
   width: 1340px;
 }
@@ -67,23 +66,20 @@
 
 #footer{
   width: 100vw;
-  height: 280px;
+  height: 100%;
   background-color: #32333b;
   color:#a8aaba;
   line-height: 1.8;
   font-size: 14px;
   border: 1px solid black;
-  position: fixed;
-  bottom: 0;
+  display: grid;
+  grid-gap: 10%;
 }
 
 .contact{
   display: inline-block;
 }
 
-.footer_contact{
-  padding: 25px 250px;
-}
 
 .footer li{
   color:#ffffff;
@@ -94,6 +90,7 @@ ul{
   font-size: 20px;
   vertical-align:top;
   margin-left: 40px;
+  margin-top: 30px;
 }
 
 .footer_contact label{
@@ -105,19 +102,33 @@ ul{
   color: #1baeae;
 }
 
+.footer_contact{
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
 @media (max-width:1339px) {
   #main{
     width:1230px;
+  }
+  .footer_contact{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 @media (max-width:1279px) {
   #main{
     width:1100px;
   }
+  .footer_contact{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 @media (max-width:1139px){
   #main{
     width:1000px;
+  }
+  .footer_contact{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
 }
@@ -144,11 +155,17 @@ ul{
     position: absolute;
     right: 2%;
   }
+  .footer_contact{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 @media (max-width:880px){
 
   #main{
     width: 740px;
+  }
+  .footer_contact{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
 }
@@ -156,6 +173,10 @@ ul{
 
   #main{
     width:calc(100% - 20px);
+  }
+  .footer_contact{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
   }
 
 }
@@ -180,5 +201,8 @@ ul{
   }
   .company{
     display: none;
+  }
+  .search{
+    display: block;
   }
 }
