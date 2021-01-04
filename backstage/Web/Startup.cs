@@ -66,6 +66,39 @@ namespace Web
                 config.LoginPath = "/Account/Login";
             });
 
+            services.AddAuthentication("OAuth")
+                    .AddJwtBearer("OAuth", options =>
+                    {
+                        var secretBytes = Encoding.UTF8.GetBytes(Constants.Secret);
+                        var keys = new SymmetricSecurityKey(secretBytes);
+                        // 當驗證失敗時，回應標頭會包含 WWW-Authenticate 標頭，這裡會顯示失敗的詳細錯誤原因
+                        options.IncludeErrorDetails = true; // 預設值為 true，有時會特別關閉
+
+                        options.Events = new JwtBearerEvents()
+                        {
+                            OnMessageReceived = context =>
+                            {
+                                if (context.Request.Query.ContainsKey("access_token"))
+                                {
+                                    context.Token = context.Request.Query["access_token"];
+                                }
+
+                                return Task.CompletedTask;
+                            }
+                        };
+
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            // 透過這項宣告，就可以從 "sub" 取值並設定給 User.Identity.Name
+                            NameClaimType = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
+                            // 透過這項宣告，就可以從 "roles" 取值，並可讓 [Authorize] 判斷角色
+                            RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
+                            ValidIssuer = Constants.Issuer,
+                            ValidAudience = Constants.Audiance,
+                            IssuerSigningKey = keys
+                        };
+                    });
+
             //services.AddAuthentication("JWT")
             //        .AddJwtBearer("JWT", configs =>
             //        {

@@ -13,39 +13,39 @@ namespace Web.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
-        private readonly JwtHelper jwt;
+        //private readonly JwtHelper jwt;
 
-        public TokenController(JwtHelper jwt)
-        {
-            this.jwt = jwt;
-        }
+        //public TokenController(JwtHelper jwt)
+        //{
+        //    this.jwt = jwt;
+        //}
 
-        [AllowAnonymous]
-        [HttpPost("~/signin")]
-        public ActionResult<string> SignIn(UserModel user)
-        {
-            return jwt.GenerateToken(user.Username);
-        }
+        //[AllowAnonymous]
+        ////[HttpPost("~/signin")]
+        //public ActionResult<string> SignIn(UserModel user)
+        //{
+        //    return jwt.GenerateToken(user.Username);
+        //}
 
 
-        [HttpGet("~/claims")]
-        public IActionResult GetClaims()
-        {
-            return Ok(User.Claims.Select(p => new { p.Type, p.Value }));
-        }
+        //[HttpGet("~/claims")]
+        //public IActionResult GetClaims()
+        //{
+        //    return Ok(User.Claims.Select(p => new { p.Type, p.Value }));
+        //}
 
-        [HttpGet("~/username")]
-        public IActionResult GetUserName()
-        {
-            return Ok(User.Identity.Name);
-        }
+        //[HttpGet("~/username")]
+        //public IActionResult GetUserName()
+        //{
+        //    return Ok(User.Identity.Name);
+        //}
 
-        [HttpGet("~/jwtid")]
-        public IActionResult GetUniqueId()
-        {
-            var jti = User.Claims.FirstOrDefault(p => p.Type == "jti");
-            return Ok(jti.Value);
-        }
+        //[HttpGet("~/jwtid")]
+        //public IActionResult GetUniqueId()
+        //{
+        //    var jti = User.Claims.FirstOrDefault(p => p.Type == "jti");
+        //    return Ok(jti.Value);
+        //}
     }
 
     public class UserModel
