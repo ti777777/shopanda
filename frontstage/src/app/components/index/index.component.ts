@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { lookup } from 'dns';
 import "owl.carousel2";
 declare var $: any;
 import { ProductDetail } from '../../class/product-detail';
@@ -56,8 +57,9 @@ export class IndexComponent implements OnInit {
     this.createCarousel();
   }
 
+  // index header carousel
   createCarousel(): void{
-    $('.owl-carousel').owlCarousel({
+    $('.carousel .owl-carousel').owlCarousel({
       loop:true,
       margin:10,
       autoplay:true,
@@ -65,17 +67,18 @@ export class IndexComponent implements OnInit {
       autoplayHoverPause:true,
       responsive:{
           0:{
-              items:1
+              items:1,
+              loop: true
           },
           600:{
-              items:1
+              items:1,
+              loop: true
           },
           1000:{
-              items:1
+              items:1,
+              loop: true
           }
       }
-  })
-
-
+    })
   }
 }

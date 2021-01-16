@@ -1,1 +1,23 @@
-<p>shopping-cart works!</p>
+<div class='cart'>
+    <div class='cart_header'>
+        <div class="cart_headerGrid">商品</div>
+        <div class="cart_headerGrid">单价</div>
+        <div class="cart_headerGrid">数量</div>
+        <div class="cart_headerGrid">小计</div>
+        <div class="cart_headerGrid">删除</div>
+    </div>
+    <div class="cart_product">
+        <div class="cart_productGrid cart_productImg"></div>
+        <div class="cart_productGrid cart_productTitle">
+            HUAWEI Mate 40 Pro+ 5G 全网通 12G...
+        </div>
+        <div class="cart_productGrid cart_productPrice">￥5,500</div>
+        <div class="cart_productGrid cart_productQuantity">2</div>
+        <div class="cart_productGrid cart_productTotal">￥5,000</div>
+        <div class="cart_productGrid cart_productDel" (click)='deleteProduct()'>
+            <a href='#'>
+                <img src='../../../assets/delete.png' width="30"/>
+            </a>
+        </div>
+    </div>
+</div>
