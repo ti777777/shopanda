@@ -35,3 +35,13 @@
   .price{
       color:#1baeae
   }
+
+  .pagination{
+    position: relative;
+    left: 37%;
+    margin: 25px 0;
+  }
+
+  .card{
+    font-family: Microsoft Yahei;
+  }

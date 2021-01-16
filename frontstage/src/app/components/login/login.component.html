@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div id='login'>
+    <div class='loginLogo'>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 style="display: inline;">
+                会员登入
+            </h3>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label>您还不是我们的会员？</label>
+            <label>
+            <a routerLink='/register'>
+                立即注册
+            </a>
+            </label>
+        </div>
+        <div style="width:100%;height:2px; background:#1baeae;"></div>
+        <div class="card-body">
+            <el-form size="small" [formGroup]="validateForm" label-width="90px"
+            label-position="left"
+            el-class="form-demo"
+            show-message='true'
+            show-icon='true'
+            >
+                <el-form-item label="邮箱" [required]="true" status='success' error='邮箱格式错误'>
+                    <el-input formControlName="mail" placeholder='请输入邮箱'></el-input>
+                </el-form-item>
+                <el-form-item label="密码" [required]="true" status='error'>
+                <el-input formControlName="password" native-type="password" placeholder='请输入密码'></el-input>
+                </el-form-item>
+                <el-form-item>
+                <el-button type="primary" (click)="submit()">提交</el-button>
+                </el-form-item>
+            </el-form>
+        </div>
+    </div>
+</div>
