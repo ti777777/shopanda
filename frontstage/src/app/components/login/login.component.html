@@ -9,7 +9,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;
             <label>您还不是我们的会员？</label>
             <label>
-            <a routerLink='/register'>
+            <a routerLink='/Certification/register'>
                 立即注册
             </a>
             </label>
@@ -29,7 +29,7 @@
                 <el-input formControlName="password" native-type="password" placeholder='请输入密码'></el-input>
                 </el-form-item>
                 <el-form-item>
-                <el-button type="primary" (click)="submit()">提交</el-button>
+                <button type="button" class="btn btn-info" (click)="submit('error')">提交</button>
                 </el-form-item>
             </el-form>
         </div>

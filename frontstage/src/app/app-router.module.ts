@@ -8,12 +8,19 @@ import { LoginComponent} from './components/login/login.component';
 import { ProductComponent } from './components/product/product.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { CertificationComponent } from './components/certification/certification.component';
 
 const appRouters: Routes = [
   { path: '' , component: IndexComponent },
   { path: 'login' , component: LoginComponent },
   { path: 'products' , component: ProductComponent },
-  { path: 'register' , component: RegisterComponent },
+  { path: 'Certification' , component: CertificationComponent , 
+    children: [
+      {
+        path: 'register' , component: RegisterComponent
+      }
+    ]
+  },
   { path: 'shoppingcart' , component: ShoppingCartComponent }
 ];
 

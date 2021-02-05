@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { lookup } from 'dns';
 import "owl.carousel2";
 declare var $: any;
 import { ProductDetail } from '../../class/product-detail';

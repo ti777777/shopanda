@@ -13,6 +13,6 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   deleteProduct(): void{
-    alert('test');
+    
   }
 }

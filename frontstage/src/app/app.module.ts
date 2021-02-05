@@ -13,6 +13,7 @@ import { ElModule } from 'element-angular';
 import { SearchComponent } from './components/search/search.component';
 import { OwlcarouselDirective } from './owlcarousel.directive';
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
+import { CertificationComponent } from './components/certification/certification.component';
 
 /*引入组件*/
 
@@ -27,7 +28,8 @@ import { FormsModule,ReactiveFormsModule } from "@angular/forms";
     RegisterComponent,
     LayoutComponent,
     SearchComponent,
-    OwlcarouselDirective
+    OwlcarouselDirective,
+    CertificationComponent
   ],
   imports: [
     BrowserModule,
