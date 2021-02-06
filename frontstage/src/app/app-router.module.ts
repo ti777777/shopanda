@@ -14,12 +14,9 @@ const appRouters: Routes = [
   { path: '' , component: IndexComponent },
   { path: 'login' , component: LoginComponent },
   { path: 'products' , component: ProductComponent },
-  { path: 'Certification' , component: CertificationComponent , 
-    children: [
-      {
-        path: 'register' , component: RegisterComponent
-      }
-    ]
+  { path: 'Certification' , component: CertificationComponent },
+  {
+    path: 'register' , component: RegisterComponent
   },
   { path: 'shoppingcart' , component: ShoppingCartComponent }
 ];
