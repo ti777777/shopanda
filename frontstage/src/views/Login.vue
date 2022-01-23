@@ -14,17 +14,7 @@
         },
         data: () => ({
             
-        }),
-        beforeCreate(){
-            if(localStorage.getItem('access_token') != null)
-            {
-                this.$router.push('/Home');
-            }
-        },
-        methods: 
-        {
-
-        }
+        })
     }
 </script>
 

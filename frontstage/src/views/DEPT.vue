@@ -20,20 +20,7 @@
         },
         data: () => ({
             
-        }),
-        methods: 
-        {
-
-        },
-        created()
-        {
-          if(localStorage.getItem('access_token') == null)
-          {
-            localStorage.removeItem('access_token');
-            this.$router.push('/Login');
-            this.$message.error('请先登入系统 ~ ');
-          }
-        },
+        })
     }
 </script>
 

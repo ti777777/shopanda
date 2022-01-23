@@ -44,9 +44,7 @@
             ],
         }),
         mounted() {
-          if( localStorage.getItem('access_token') != null)
-          {
-            axios.get(
+          axios.get(
               'http://localhost:23568/api/V1/Home/GetDeptList',
               {
                 headers: {
@@ -63,8 +61,7 @@
               })
               .catch(err => {
                 this.errDiaLog = !this.errDiaLog;
-              });
-          }
+          });
         }
     }
 </script>

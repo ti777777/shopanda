@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "name": "系统文件",
+      "slug": "book",
+      "icon":"mdi-book-alphabet",
+      "children": [{
+            "id": 2,
+            "name": "PEC",
+            "slug": "PEC",
+            "children": [
+            {
+                "id": 3,
+                "name": "PEC WebApi Sop",
+                "slug": "PEC",
+                "children": []
+            }]
+        }]
+    },
+    {
+      "id": 4,
+      "name": "档案维护",
+      "slug": "档案维护",
+      "icon":"mdi-grease-pencil",
+      "children": [{
+          "id": 5,
+          "name": "員工清單",
+          "slug": "EMP",
+          "children": []
+        },
+        {
+          "id": 6,
+          "name": "部門清單",
+          "slug": "DEPT",
+          "children": []
+        },
+        {
+          "id": 7,
+          "name": "編輯使用者",
+          "slug": "EDITUSER",
+          "children": []
+        }]
+    },
+    {
+      "id": 8,
+      "name": "产品分析",
+      "slug": "产品分析",
+      "icon":"mdi-video-input-antenna",
+      "children": [
+        {
+          "id": 9,
+          "name": "用户意见",
+          "slug": "COMMENT",
+          "children": []
+        }]
+    }]

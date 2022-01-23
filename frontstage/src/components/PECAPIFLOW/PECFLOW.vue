@@ -12,6 +12,7 @@
       :aspect-ratio="16/9"
       :width="width"
       src= "/img/PEC_WebApi_Flow.jpg"
+      alt="图片发生错误"
     ></v-img>
     </div>
 </template>

@@ -77,36 +77,30 @@
                 }
                 else
                 {
-                    localStorage.setItem('access_token', "jdoasjdoasijd");
-                    location.reload();
-                    this.$router.push('/Home');
-                    this.$message.success('登入成功 ~ ');
-                    // //Params            
-                    // let params = new FormData();
-                    // params.append('client_id', 'client')
-                    // params.append('client_secret', 'secret')
-                    // params.append('grant_type', 'password')
-                    // params.append('username', this.userno) 
-                    // params.append('password', this.password)
-                    // //Post GetToken
-                    // axios.post('http://localhost:5002/connect/token',
-                    //             params,
-                    //             {
-                    //                 headers:{
-                    //                     'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>' 
-                    //                 }
-                    //             })
-                    // .then(response => {
-                    //     localStorage.setItem('access_token', response.data.access_token);
-                    //     localStorage.setItem('refresh_token', response.data.refresh_token);
-                    //     this.$router.push('/Home');
-                    //     location.reload();
-                    //     this.$message.error('登入成功 ~ ')
-                    // })
-                    // .catch(err => {
-                    //     localStorage.removeItem('access_token');
-                    //     this.$message.error('账号密码有误 !!!!')
-                    // });
+                    Params            
+                    let params = new FormData();
+                    params.append('client_id', 'client')
+                    params.append('client_secret', 'secret')
+                    params.append('grant_type', 'password')
+                    params.append('username', this.userno) 
+                    params.append('password', this.password)
+                    //Post GetToken
+                    axios.post('http://localhost:5002/connect/token',
+                    params,
+                    {
+                        headers:{
+                            'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>' 
+                        }
+                    })
+                    .then(res => {
+                        this.$store.commit('setUserInfo', res.data);
+                        this.$message.error('登入成功 ~ ');
+                        window.location.href = '/Home';
+                    })
+                    .catch(err => {
+                        localStorage.removeItem('access_token');
+                        this.$message.error('账号密码有误 !!!!')
+                    });
                 }
             }
         }

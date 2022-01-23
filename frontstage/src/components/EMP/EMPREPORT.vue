@@ -209,8 +209,6 @@ export default {
     },
   }),
   mounted() {
-    if( localStorage.getItem('access_token') != null)
-    {
       axios.get("http://localhost:23568/api/V1/Home/GetEmployeeList", {
       headers: {
         "Content-Type": "application/json",
@@ -227,7 +225,6 @@ export default {
         console.error(err);
         this.errDiaLog = !this.errDiaLog;
       });
-    }
   },
   methods: {
     //双向绑定员工资料

@@ -32,9 +32,7 @@ export default {
     methods: {
       GoLogin()
       {
-        localStorage.removeItem('access_token');
         this.$router.push('/Login');
-        location.reload();
       }
     }
 }
