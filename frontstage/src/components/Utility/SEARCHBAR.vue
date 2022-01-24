@@ -19,6 +19,7 @@
         </v-app-bar>
         <!---->
 
+
         <!--tip dialog-->
         <v-snackbar
         v-model="snackbar"
@@ -125,12 +126,17 @@
         <!--login logout-->
         <template v-slot:append>
         <div class="pa-2">
-          <v-btn block class="orange" v-on:click="goPage('login')">
+          <v-btn block class="orange" v-on:click="goPage('Register')" v-if="!isLogin">
+            Register
+          </v-btn>
+        </div>
+        <div class="pa-2">
+          <v-btn block class="orange" v-on:click="goPage('Login')" v-if="!isLogin">
             LogIn
           </v-btn>
         </div>
         <div class="pa-2">
-          <v-btn block class="red" v-on:click="logout()">
+          <v-btn block class="red" v-on:click="logout()" v-if="isLogin">
             Logout
           </v-btn>
         </div>
@@ -145,14 +151,14 @@
     export default {
         name: 'SEARCHBAR',
         data: () => ({
+            isLogin: localStorage.getItem('token'),
             snackbar: false,
-            token: (localStorage.getItem('access_token') == null),
             drawer: false,
             category: []
         }),
         methods: {
             goPage(page){
-            this.$router.push(page)
+              this.$router.push(page);
             },
             tips()
             {
@@ -161,7 +167,14 @@
             logout()
             {
               this.$store.commit('logout');
+              this.$message.success('登出成功');
             }
+        },
+        beforeCreate(){
+          if(localStorage.getItem('token') != null)
+          {
+            this.isLogin = !this.isLogin;
+          }
         },
         mounted() {
           axios.get('/static/Menu.json')

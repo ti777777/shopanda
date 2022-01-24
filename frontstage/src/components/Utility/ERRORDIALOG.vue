@@ -7,10 +7,10 @@
     >
     <v-card color="black" class="justify-center">
     <v-card-title class="text-h6" style="color:white">
-    Token 发生错误请重新登入 !
+    登入過期 ! 请重新登入 !
     </v-card-title>
     <v-card-text style="color:white">
-      Token error, please log in again.</v-card-text>
+      Please log in to the system.</v-card-text>
     <v-card-actions>
     <v-spacer></v-spacer>
     <v-btn

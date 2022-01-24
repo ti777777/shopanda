@@ -1,6 +1,7 @@
 <template>
     <div class="EMPMAIN">
-        <div class="SEARCHBAR">
+        <div class="HEADER">
+            <SEARCHBAR/>
             <CAROUSEL/>
         </div>
         <div class="EMPREPORT">
@@ -12,11 +13,13 @@
 <script>
     import CAROUSEL from '../components/Utility/CAROUSEL'
     import EMPREPORT from '../components/EMP/EMPREPORT'
+    import SEARCHBAR from '../components/Utility/SEARCHBAR'
     export default {
         name: 'EMP',
         components: {
             CAROUSEL,
-            EMPREPORT
+            EMPREPORT,
+            SEARCHBAR
         },
         data: () => ({
             

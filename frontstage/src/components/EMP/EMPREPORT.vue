@@ -209,22 +209,29 @@ export default {
     },
   }),
   mounted() {
-      axios.get("http://localhost:23568/api/V1/Home/GetEmployeeList", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("access_token"),
-      },
-      })
-      .then((res) => {
-        if (res.data.status == 1) {
-          this.EMPDATA = res.data.result;
-          this.loading = false;
-        }
-      })
-      .catch((err) => {
-        console.error(err);
+      let userToken = this.$store.getters.token;
+      if(userToken != null)
+      {
+        axios.get("http://localhost:23568/api/V1/Home/GetEmployeeList", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + userToken,
+        },
+        })
+        .then((res) => {
+          if (res.data.status == 1) {
+            this.EMPDATA = res.data.result;
+            this.loading = false;
+          }
+        })
+        .catch((err) => {
+          this.errDiaLog = !this.errDiaLog;
+        });
+      }
+      else
+      {
         this.errDiaLog = !this.errDiaLog;
-      });
+      }
   },
   methods: {
     //双向绑定员工资料
@@ -241,7 +248,7 @@ export default {
         headers: 
         {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("access_token"),
+          Authorization: "Bearer " + this.$store.getters.token,
         }
       })
       .then(res => {

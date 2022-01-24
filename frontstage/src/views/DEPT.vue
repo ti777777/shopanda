@@ -1,6 +1,7 @@
 <template>
     <div class="DEPTMAIN">
-        <div class="SEARCHBAR">
+        <div class="HEADER">
+            <SEARCHBAR/>
             <CAROUSEL/>
         </div>
         <div class="DEPTREPORT">
@@ -12,11 +13,13 @@
 <script>
     import CAROUSEL from '../components/Utility/CAROUSEL'
     import DEPTREPORT from '../components/DEPT/DEPTREPORT'
+    import SEARCHBAR from '../components/Utility/SEARCHBAR'
     export default {
         name: 'DEPT',
         components: {
             CAROUSEL,
-            DEPTREPORT
+            DEPTREPORT,
+            SEARCHBAR
         },
         data: () => ({
             

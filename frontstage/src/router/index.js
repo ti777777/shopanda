@@ -36,6 +36,16 @@ const routes = [
     component: () => import('../views/Login.vue')
   },
   {
+    path: '/Register',
+    name: 'Register',
+    component: () => import('../views/Register.vue')
+  },
+  {
+    path: '/Setting',
+    name: 'Setting',
+    component: () => import('../views/Setting.vue')
+  },
+  {
     path: '/category/PEC',
     name: 'PEC',
     component: () => import('../views/PEC.vue')

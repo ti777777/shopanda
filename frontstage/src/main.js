@@ -4,10 +4,10 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
-import { Button, message, Menu, Icon} from 'ant-design-vue';
+import { Button, message, Menu, Icon, Card, Form, Input ,Spin, Space } from 'ant-design-vue';
 
 Vue.component(Button.name, Button);
-Vue.use(Icon).use(Menu);
+Vue.use(Icon).use(Menu).use(Card).use(Form).use(Input).use(Spin).use(Space);
 Vue.config.productionTip = false;
 
 //Message

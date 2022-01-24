@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import router from '../router'
+import jwt_decode from "jwt-decode";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     userInfo: null,
-    token: null
+    token: null,
   },
   getters: {
     userInfo: (state) => {
@@ -24,11 +25,11 @@ export default new Vuex.Store({
             let localeUser = localStorage.getItem('user')
             if (localeUser != null) {
                 state.userInfo = JSON.parse(localeUser)
+            }
+            return localeUser
         }
-        return localeUser
       }
-    }
-    return state.userInfo
+      return state.userInfo
     },
     token: (state) => {
       if (state.token == null) {
@@ -46,34 +47,32 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    setToken(state, token, refreshToken, flag = true) {
+    setToken(state, userInfo, flag = true) {
       if (flag) {
-          localStorage.setItem('token', token);
-          localStorage.setItem('refresh_token', refreshToken);
+          localStorage.setItem('token', userInfo.data.access_token);
+          localStorage.setItem('refreshToken', userInfo.data.refresh_token);
       } else {
-          sessionStorage.setItem('token', token);
-          sessionStorage.setItem('token', refreshToken);
+          sessionStorage.setItem('token', userInfo.data.access_token);
+          sessionStorage.setItem('token', userInfo.data.refresh_token);
       }
     },
     setUserInfo(state, userInfo, flag = true) {
-      state.userInfo = userInfo;
-      state.token = userInfo.access_token;
+      let jwtData = jwt_decode(userInfo.data.access_token);
+      state.userInfo = JSON.stringify(userInfo);
+      state.token = userInfo.data.access_token;
       if (flag) {
-          localStorage.setItem('user', JSON.stringify(userInfo))
+          localStorage.setItem('user', jwtData.client_id)
       } else {
-          sessionStorage.setItem('user', JSON.stringify(userInfo))
+          sessionStorage.setItem('user', jwtData.client_id)
       }
-      this.commit('setToken', userInfo.access_token, userInfo.refresh_token, flag)
     },
     logout(state)
     {
-      console.error('执行登出了');
       state.userInfo = null;
       state.token = null;
-      localStorage.removeItem('token')
-      localStorage.removeItem('user')
-      sessionStorage.removeItem('token')
-      sessionStorage.removeItem('user')
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      localStorage.removeItem('refreshToken');
       router.push('/Login')
     }
   },
