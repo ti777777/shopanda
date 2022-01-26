@@ -24,19 +24,19 @@
       "icon":"mdi-grease-pencil",
       "children": [{
           "id": 5,
-          "name": "員工清單",
+          "name": "员工清单",
           "slug": "EMP",
           "children": []
         },
         {
           "id": 6,
-          "name": "部門清單",
+          "name": "部门清单",
           "slug": "DEPT",
           "children": []
         },
         {
           "id": 7,
-          "name": "編輯使用者",
+          "name": "编辑使用者",
           "slug": "EDITUSER",
           "children": []
         }]
@@ -53,4 +53,61 @@
           "slug": "COMMENT",
           "children": []
         }]
-    }]
+    },
+    {
+      "id": 10,
+      "name": "外卖分类",
+      "slug": "food",
+      "icon":"mdi-format-list-bulleted",
+      "children": [
+        {
+            "id": 11,
+            "name": "美食",
+            "slug": "FOOD",
+            "children": []
+        },
+        {
+          "id": 12,
+          "name": "超市便利",
+          "slug": "SUPERMARKET",
+          "children": []
+        },
+        {
+          "id": 13,
+          "name": "心动买药",
+          "slug": "MEDICINE",
+          "children": []
+        },
+        {
+          "id": 14,
+          "name": "甜点饮品",
+          "slug": "DRINK",
+          "children": []
+        },
+        {
+          "id": 15,
+          "name": "蔬菜水果",
+          "slug": "VEGETTABLE",
+          "children": []
+        },
+        {
+          "id": 16,
+          "name": "无辣不欢",
+          "slug": "SPICY",
+          "children": []
+        },
+        {
+          "id": 17,
+          "name": "下午茶",
+          "slug": "TEA",
+          "children": []
+        },
+        {
+          "id": 18,
+          "name": "买酒",
+          "slug": "LIQUOR",
+          "children": []
+        }
+      ]
+    }
+  ]

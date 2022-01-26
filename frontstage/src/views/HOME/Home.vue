@@ -8,8 +8,8 @@
 </template>
 
 <script>
-    import SEARCHBAR from '../components/Utility/SEARCHBAR'
-    import CAROUSEL from '../components/Utility/CAROUSEL'
+    import SEARCHBAR from '../../components/Utility/SEARCHBAR'
+    import CAROUSEL from '../../components/Utility/CAROUSEL'
     export default {
         name: 'Home',
         components: {

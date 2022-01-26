@@ -36,8 +36,8 @@
         data: () => ({
         links: [
             {label: '首页', url: '/Home'},
-            {label: '关于字節跳動', url: 'https://www.bytedance.com/zh/'},
-            {label: '心動外賣', url: '#'},
+            {label: '关于字节跳动', url: 'https://www.bytedance.com/zh/'},
+            {label: '心动外卖', url: '#'},
             {label: '抖音', url: 'https://www.douyin.com/'},
         ],
         }),

@@ -20,4 +20,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  FOOTER{
+    position: fixed;
+    bottom: 0;
+  }
 </style>

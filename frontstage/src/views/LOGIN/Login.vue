@@ -3,8 +3,7 @@
     <div class="HEADER">
         <SEARCHBAR/>
     </div>
-    <div class='loginDoc'>
-        <div class="main">
+    <div class='CONTENT'>
         <v-card
             class="mx-auto"
             max-width="400"
@@ -52,14 +51,13 @@
         </v-container>
         </v-form>
         </v-card>
-        </div>
     </div>
 </div>
 </template>
 
 <script>
     import axios from 'axios'
-    import SEARCHBAR from '../components/Utility/SEARCHBAR'
+    import SEARCHBAR from '../../components/Utility/SEARCHBAR'
     export default {
         name: 'Login',
         components:
@@ -123,7 +121,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .loginDoc{
+    .CONTENT{
         margin-top: 90px;
     }
 </style>

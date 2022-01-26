@@ -9,7 +9,6 @@
             max-width="550"
             outlined
             >
-            
             <a-card title="新用户注册">
             </a-card>
             <v-container>
@@ -17,7 +16,10 @@
                     <v-row>
                         <v-col cols="12" >
                             <a-form-item label="员工编号 : " has-feedback validate-status="success">
-                            <a-input id="userno" placeholder="请输入8码员工编号" v-model="this.userinfo.userNo"/>
+                            <a-input id="userno" placeholder="请输入8码员工编号" v-model="userinfo.USERNO"/>
+                            </a-form-item>
+                            <a-form-item label="员工姓名 : " has-feedback validate-status="success">
+                            <a-input id="userName" placeholder="请输入员工姓名" v-model="userinfo.USERNAME"/>
                             </a-form-item>
                             <a-form-item label="密码 : " has-feedback validate-status="success">
                             <a-input
@@ -27,13 +29,13 @@
                                 ]"
                                 type="password"
                                 placeholder="请输入密码"
-                                v-model="this.userinfo.password"
+                                v-model="userinfo.USERPWD"
                             >
                                 <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
                             </a-input>
                             </a-form-item>
                             <a-form-item label="信箱 : " has-feedback validate-status="success">
-                            <a-input id="email" placeholder="建议使用公司信箱" v-model="this.userinfo.email"/>
+                            <a-input id="email" placeholder="建议使用公司信箱" v-model="userinfo.EMAILADDR"/>
                             </a-form-item>  
                             <a-form-item :wrapper-col="{ span: 20, offset: 9 }">
                             <a-button type="primary" shape="round" size="large" :loading="load" @click="Register()">
@@ -51,7 +53,7 @@
 
 <script>
 import axios from 'axios'
-import SEARCHBAR from '../components/Utility/SEARCHBAR'
+import SEARCHBAR from '../../components/Utility/SEARCHBAR'
 export default {
     name: 'COMMENT',
     components: {
@@ -66,33 +68,32 @@ export default {
         wrapperCol: {
         xs: { span: 24 },
         sm: { span: 15 },
-      },
-      userinfo: {
-            userNo: '',
-            password: '',
-            email: ''
+        },
+        userinfo: {
+            USERNO: '',
+            USERNAME: '',
+            USERPWD: '',
+            ROLES: 'VIEW',
+            EMAILADDR: ''
         }
     }),
     methods: {
         Register()
         {
-            this.load = true;
-            // axios.post('', this.userinfo)
-            // .then(res => {
-                //this.load = false;
-                // this.$router.push('/Login');
-                // this.$message.success('Register Success ~ ');
-            // })
-            // .then(err => {
-                    //this.$message.error('Register Failed ~ Please Try Again')
-            // })
+            axios.post('http://localhost:23568/api/V1/Home/AddUser', this.userinfo)
+            .then(res => {
+                this.load = false;
+                this.$router.push('/Login');
+                this.$message.success('Register Success ~ ');
+            })
+            .catch(err => {
+                this.$message.error('Register Failed ~ Please Try Again')
+            })
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-    .CONTENT{
-        margin-top: 100px;
-    }
+    .CONTENT{margin-top: 100px;}
 </style>

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import router from '../router'
-import jwt_decode from "jwt-decode";
 
 Vue.use(Vuex)
 
@@ -53,17 +52,16 @@ export default new Vuex.Store({
           localStorage.setItem('refreshToken', userInfo.data.refresh_token);
       } else {
           sessionStorage.setItem('token', userInfo.data.access_token);
-          sessionStorage.setItem('token', userInfo.data.refresh_token);
+          sessionStorage.setItem('refreshToken', userInfo.data.refresh_token);
       }
     },
     setUserInfo(state, userInfo, flag = true) {
-      let jwtData = jwt_decode(userInfo.data.access_token);
       state.userInfo = JSON.stringify(userInfo);
       state.token = userInfo.data.access_token;
       if (flag) {
-          localStorage.setItem('user', jwtData.client_id)
+          localStorage.setItem('user', JSON.stringify(userInfo))
       } else {
-          sessionStorage.setItem('user', jwtData.client_id)
+          sessionStorage.setItem('user', JSON.stringify(userInfo))
       }
     },
     logout(state)

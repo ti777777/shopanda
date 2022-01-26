@@ -12,14 +12,22 @@
         <v-toolbar-title>ByteDance</v-toolbar-title>
         <v-spacer></v-spacer>
 
+        <v-btn icon v-on:click="goPage('EDITUSER')" v-if="user != null && user.name != null">
+        <v-avatar
+          color="red"
+          size="35"
+        >
+        {{user.name}}
+        </v-avatar>
+        </v-btn>
+        
         <!--Notice Btn-->
         <v-btn icon v-on:click="tips()">
         <v-icon>mdi-bell</v-icon>
         </v-btn>
-        </v-app-bar>
         <!---->
-
-
+        </v-app-bar>
+        
         <!--tip dialog-->
         <v-snackbar
         v-model="snackbar"
@@ -114,6 +122,7 @@
         <!--Setting-->
         <v-list-item
         to="/Setting"
+        v-if="user.roles == 'ADMIN'"
         >
         <v-list-item-icon>
           <v-icon>mdi-cog</v-icon>
@@ -148,9 +157,14 @@
 
 <script>
     import axios from 'axios';
+    import jwt_decode from "jwt-decode";
     export default {
         name: 'SEARCHBAR',
         data: () => ({
+            user: {
+              name: null,
+              roles: null
+            },
             isLogin: localStorage.getItem('token'),
             snackbar: false,
             drawer: false,
@@ -158,7 +172,7 @@
         }),
         methods: {
             goPage(page){
-              this.$router.push(page);
+              this.$router.push({name: page})
             },
             tips()
             {
@@ -170,13 +184,18 @@
               this.$message.success('登出成功');
             }
         },
-        beforeCreate(){
-          if(localStorage.getItem('token') != null)
-          {
-            this.isLogin = !this.isLogin;
-          }
-        },
         mounted() {
+          
+          //載入USERINFO
+          if(this.$store.getters.userInfo != null)
+          {
+            let userInfoJson = JSON.parse(this.$store.getters.userInfo);
+            let userInfo = jwt_decode(userInfoJson.data.access_token);
+            this.user.name = userInfo.name;
+            this.user.roles = userInfo.role;
+          }
+
+          //載入SEARCHBAR
           axios.get('/static/Menu.json')
           .then(res => {
             this.category = res.data;
